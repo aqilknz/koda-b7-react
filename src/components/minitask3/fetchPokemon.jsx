@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PokemonCard from "./card";
+import Header from "../minitask4/Header.jsx";
+import Footer from "../minitask4/Footer.jsx";
 
 const FetchPokemon = () => {
     const [pokemonList, setPokemonList] = useState([]); 
@@ -40,6 +42,8 @@ const FetchPokemon = () => {
     );
 
     return (
+        <>
+        <Header />
         <div className="min-h-screen bg-gray-50 p-8 text-black">
             <div className="max-w-full mx-auto">
                 <header className="text-center mb-10">
@@ -76,6 +80,8 @@ const FetchPokemon = () => {
                 )}
             </div>
         </div>
+        <Footer />
+        </>
     );
 };
 
