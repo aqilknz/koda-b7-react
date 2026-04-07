@@ -11,7 +11,7 @@ function CardChar({ character }) {
     };
     return (
         <article 
-            className='border-2 border-pink-600 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md'
+            className='border-2 border-pink-600 rounded-xl overflow-hidden cursor-pointer hover:border-amber-300 hover:border-4 transition-transform shadow-md'
             onClick={handleNavigate}
         >
             <img src={character.image} alt={character.name} className='w-full' />
