@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../minitask4/Header.jsx';
 import Footer from '../minitask4/Footer.jsx';
 
+const BASE_URL = "https://rickandmortyapi.com/api/character"
 function DetailChar() {
     const [data, setData] = useState(null);
     const { id, slug } = useParams();
@@ -11,7 +12,7 @@ function DetailChar() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_RM}/${id}`);
+                const response = await fetch(`${BASE_URL}/${id}`);
                 const data = await response.json();
 
                 if (data.name) {
