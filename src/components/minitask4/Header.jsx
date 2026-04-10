@@ -21,6 +21,9 @@ function Nav() {
                     <li><NavLink to="/characters" className={({isActive}) => {
                         return isActive ? "text-pink-600" : "text-white hover:text-pink-600"
                     }}>Characters</NavLink></li>
+                    <li><NavLink to="/customhook" className={({isActive}) => {
+                        return isActive ? "text-pink-600" : "text-white hover:text-pink-600"
+                    }}>Custom Hook</NavLink></li>
                 </ul>
             </header>
         </nav>
