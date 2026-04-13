@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../redux/slice/productSlice";
 
-const TableProduct = ({ products }) => {
+const TableProduct = ({ products, onEdit }) => {
     const dispatch = useDispatch();
 
     return (
@@ -30,8 +30,11 @@ const TableProduct = ({ products }) => {
                             <td className="border">{item.brand}</td>
                             <td className="border">{item.count}</td>
                             <td className="border">
+                                <button onClick={() => onEdit(item)}>
+                                    <img src="/icons/edit.svg" className="w-4 h-4 cursor-pointer"/>
+                                </button>
                                 <button onClick={() => dispatch(deleteProduct(item.id))}>
-                                    <img src="/icons/trash.svg" className="w-4 h-4"/>
+                                    <img src="/icons/trash.svg" className="w-4 h-4 cursor-pointer"/>
                                 </button>
                             </td>
                         </tr>
