@@ -1,27 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../redux/slice/productSlice.js";
+import { addProduct, updateProduct } from "../../redux/slice/productSlice.js";
 
-const FormProduct = () => {
+const FormProduct = ({ editData, setEditData }) => {
     const dispatch = useDispatch();
 
     const [name, setName] = useState("");
     const [category, setCategory] = useState("");
     const [brand, setBrand] = useState("");
     const [count, setCount] = useState(0);
+    useEffect(() => {
+        if (editData) {
+            setName(editData.name);
+            setCategory(editData.category);
+            setBrand(editData.brand);
+            setCount(editData.count);
+        }
+    }, [editData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newProduct = {
-            id: Date.now(),
+        const product = {
+            id: editData ? editData.id : Date.now(),
             name,
             category,
             brand,
             count: Number(count),
         };
 
-        dispatch(addProduct(newProduct));
+        if (editData) {
+            dispatch(updateProduct(product));
+            setEditData(null);
+        } else {
+            dispatch(addProduct(product));
+        }
 
         setName("");
         setCategory("");
