@@ -37,6 +37,9 @@ function Nav() {
                     <li><NavLink to="/survey" className={({ isActive }) => {
                         return isActive ? "text-pink-600" : "text-white hover:text-pink-600"
                     }}>Survey</NavLink></li>
+                    <li><NavLink to="/product" className={({ isActive }) => {
+                        return isActive ? "text-pink-600" : "text-white hover:text-pink-600"
+                    }}>Product Redux</NavLink></li>
                 </ul>
                 <div className="flex gap-4 place-self-end">
                     {!state.user.username ? (
