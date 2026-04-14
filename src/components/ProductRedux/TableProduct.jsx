@@ -17,7 +17,7 @@ const TableProduct = ({ products, onEdit }) => {
                         <th className="border">Category</th>
                         <th className="border">Brand</th>
                         <th className="border">Stock</th>
-                        <th className="border">Delete</th>
+                        <th className="border">Action</th>
                     </tr>
                 </thead>
 
@@ -31,10 +31,10 @@ const TableProduct = ({ products, onEdit }) => {
                             <td className="border">{item.count}</td>
                             <td className="border">
                                 <button onClick={() => onEdit(item)}>
-                                    <img src="/icons/edit.svg" className="w-4 h-4 cursor-pointer"/>
+                                    <img src="/icons/edit.svg" className="w-4 h-4 cursor-pointer mr-2"/>
                                 </button>
                                 <button onClick={() => dispatch(deleteProduct(item.id))}>
-                                    <img src="/icons/trash.svg" className="w-4 h-4 cursor-pointer"/>
+                                    <img src="/icons/trash.svg" className="w-4 h-4 cursor-pointer ml-2"/>
                                 </button>
                             </td>
                         </tr>
